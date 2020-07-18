@@ -7,8 +7,8 @@ android {
     buildToolsVersion "29.0.2"
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 29
+        minSdkVersion 15
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
 
@@ -26,10 +26,17 @@ android {
         abortOnError false
         checkReleaseBuilds false
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:support-v4:28.0.0"
+    implementation 'com.android.support:support-annotations:28.0.0'
 }
 
 
@@ -38,7 +45,7 @@ publish {
     repoName = 'common-android'
     groupId = 'me.huaisu'
     artifactId = 'common-android'
-    publishVersion = '1.0.0'
+    publishVersion = '1.0.1'
     desc = 'common android library'
     website = "https://github.com/xh2009cn/common-android"
 }

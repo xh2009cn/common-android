@@ -11,4 +11,8 @@ public class Logger {
     public static void e(String tag, Throwable e) {
         Log.e(tag, Log.getStackTraceString(e));
     }
+
+    public static void w(String tag, Throwable e) {
+        Log.w(tag, Log.getStackTraceString(e));
+    }
 }

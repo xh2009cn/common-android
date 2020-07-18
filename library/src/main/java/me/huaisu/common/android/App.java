@@ -2,6 +2,8 @@ package me.huaisu.common.android;
 
 import android.app.Application;
 
+import me.huaisu.common.android.runtime.AppRuntime;
+
 public class App {
 
     private static Application sApp;
@@ -10,7 +12,9 @@ public class App {
         return sApp;
     }
 
-    public static void set(Application app) {
+    public static void onAttachBaseContext(Application app) {
         sApp = app;
+        AppBuildConfig.APPLICATION_ID = app.getPackageName();
+        AppRuntime.get().onProcessStart();
     }
 }
